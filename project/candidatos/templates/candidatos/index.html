@@ -1,0 +1,60 @@
+{% extends "candidatos/base.html" %}
+{% block content%}
+
+<div class = "filtro" >
+    <label for="loja">Filtrar por loja:</label>
+    <select name="loja">
+        
+        <option value="">Todas</option>
+        
+        {% for l in lojas %}
+
+
+            <option value="{{ l }}" {% if request.GET.loja == 1 %}select{% endif %}>{{ l }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="text" name="busca" placeholder="Buscar por nome..." value="{{ request.GET.busca }}">
+    <button type="submit">Filtrar</button>
+</div>
+<table id="tabela">
+    <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Função</th>
+            <th>Nome</th>
+            <th>Situação</th>
+            <th>CPF</th>
+            <th>Análise</th>
+            <th>Certidão Criminal</th>
+            <th>Redação</th>
+            <th>Teste de Sondagem</th>
+            <th>Prova Matemática</th>
+            <th>Observação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in candidatos %}
+    <tr>
+    <td>{{c.loja}} </td>
+    <td>{{c.funcao}} </td>
+    <td> {{c.nome}}</td>
+    <td>{{c.situacao}} </td>
+    <td>{{c.cpf}} </td>
+    <td>{{c.analise}} </td>
+    <td>{{c.certidao}} </td>
+    <td> {{c.redacao}}</td>
+    <td>{{c.teste_sondagem}} </td>
+    <td>{{c.prova_matematica}} </td>
+    <td>{{c.observacao}} </td>
+    <td> </td>
+    </tr>
+    {% empty %}
+        <tr><td colspan="12"> Nenhum Registro</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
