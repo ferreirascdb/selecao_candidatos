@@ -1,21 +1,22 @@
 {% extends "candidatos/base.html" %}
 {% block content%}
+<form method="GET">
+    <div class = "filtro" >
+        <label for="loja">Filtrar por loja:</label>
+        <select name="loja">
+            
+            <option value="">Todas</option>
+            
+            {% for l in lojas %}
+                <option value="{{ l }}" {% if request.GET.loja == 1 %}selected{% endif %}>{{ l }}</option>
+            {% endfor %}
+        </select>
 
-<div class = "filtro" >
-    <label for="loja">Filtrar por loja:</label>
-    <select name="loja">
-        
-        <option value="">Todas</option>
-        
-        {% for l in lojas %}
-            <option value="{{ l }}" {% if request.GET.loja == 1 %}select{% endif %}>{{ l }}</option>
-        {% endfor %}
-    </select>
-
-    <input type="text" name="busca" placeholder="Buscar por nome..." value="{{ request.GET.busca }}">
-    <button type="submit">Filtrar</button>
-    <a  href= "{% url 'novo_candidato' %}"> Novo Candidato</a>
-</div>
+        <input type="text" name="busca" placeholder="Buscar por nome..." value="{{ request.GET.busca }}">
+        <button type="submit">Filtrar</button>
+        <a  href= "{% url 'novo_candidato' %}"> <button type= "button"> Novo candidato </button></a>
+    </div>
+</form>
 <table id="tabela">
     <thead>
         <tr>

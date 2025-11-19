@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 
 from candidatos.models import Candidato
 from candidatos.forms import CandidatoForm
@@ -8,6 +8,7 @@ from candidatos.forms import CandidatoForm
 def index(request):
     loja = request.GET.get('loja')
     busca = request.GET.get('busca')
+   
 
     candidatos = Candidato.objects.all()
 
