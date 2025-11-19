@@ -16,6 +16,7 @@
 
     <input type="text" name="busca" placeholder="Buscar por nome..." value="{{ request.GET.busca }}">
     <button type="submit">Filtrar</button>
+    <a  href= "{% url 'novo_candidato' %}"> Novo Candidato</a>
 </div>
 <table id="tabela">
     <thead>

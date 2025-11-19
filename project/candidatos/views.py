@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from candidatos.models import Candidato
+from candidatos.forms import CandidatoForm
 
 
 
@@ -22,3 +23,13 @@ def index(request):
         "candidatos": candidatos,
         "lojas": lojas,
     })
+def novo_candidato(request):
+    if request.method == 'POST':
+        form =CandidatoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        
+    else:
+        form = CandidatoForm()
+    return render(request, 'candidatos/form.html', {"form":form})
