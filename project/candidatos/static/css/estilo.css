@@ -40,23 +40,4 @@ input, select, button, textarea {
     padding: 5px; 
     margin: 4px; 
 }
-.modal { 
-    display: none; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: rgba(0,0,0,0.5); 
-}
-.modal-content { 
-    background: #fff; 
-    padding: 20px; 
-    border-radius: 8px; 
-    width: 400px; 
-}
-.modal-content input, textarea { 
-    width: 100%; 
-    margin-bottom: 8px; 
-}
 

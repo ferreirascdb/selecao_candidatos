@@ -8,8 +8,6 @@
         <option value="">Todas</option>
         
         {% for l in lojas %}
-
-
             <option value="{{ l }}" {% if request.GET.loja == 1 %}select{% endif %}>{{ l }}</option>
         {% endfor %}
     </select>
