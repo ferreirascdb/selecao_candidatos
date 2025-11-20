@@ -1,10 +1,10 @@
 from django.shortcuts import redirect, render, get_object_or_404
-
+from django.contrib.auth.decorators import login_required
 from candidatos.models import Candidato
 from candidatos.forms import CandidatoForm
 
 
-
+@login_required
 def index(request):
     loja = request.GET.get('loja')
     busca = request.GET.get('busca')

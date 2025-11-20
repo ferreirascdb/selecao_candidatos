@@ -40,5 +40,15 @@ input, select, button, textarea {
     padding: 5px; 
     margin: 4px; 
 }
+.login-container{
+    
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--color4);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000022;
+    font-family: Arial, sans-serif;
+}
 
 
