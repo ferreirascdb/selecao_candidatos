@@ -6,6 +6,7 @@ class Candidato(models.Model):
     nome = models.CharField(max_length=200, null=True, blank=True)
     situacao = models.CharField(max_length=50, null=True, blank=True)
     cpf = models.CharField(max_length=14, null=True, blank=True)
+    email = models.EmailField(max_length=155,null=True, blank=True)
     analise = models.CharField(max_length=50, null=True, blank=True)
     certidao = models.CharField(max_length=50,null=True, blank=True)
     redacao = models.CharField(max_length=50,null=True, blank=True)

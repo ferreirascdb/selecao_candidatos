@@ -25,6 +25,7 @@
             <th>Nome</th>
             <th>Situação</th>
             <th>CPF</th>
+            <th>Email</th>
             <th>Análise</th>
             <th>Certidão Criminal</th>
             <th>Redação</th>
@@ -42,23 +43,26 @@
     <td> {{c.nome}}</td>
     <td>{{c.situacao}} </td>
     <td>{{c.cpf}} </td>
+    <td>{{c.email}} </td>
     <td>{{c.analise}} </td>
     <td>{{c.certidao}} </td>
     <td> {{c.redacao}}</td>
     <td>{{c.teste_sondagem}} </td>
     <td>{{c.prova_matematica}} </td>
     <td>{{c.observacao}} </td>
-    <td> <a href="{% url 'editar_candidato' c.id %}"> <button type="button">Editar</button> </a>  
+    <td> 
         <form method="POST" action="{% url 'deletar_candidato' c.id %}" 
             onsubmit="return confirm('Tem certeza que deseja excluir este candidato?');">
             {% csrf_token %}
-            <button  type = "button">Excluir</button>
+            <a href="{% url 'editar_candidato' c.id %}"><button type="button">Editar</button></a>  
+            <a> <button>Excluir</button></a>
+            
         </form>
     </td>
     
     </tr>
     {% empty %}
-        <tr><td colspan="12"> Nenhum Registro</td></tr>
+        <tr><td colspan="13" style="text-align:center;"> Nenhum Registro</td></tr>
     {% endfor %}
     </tbody>
 </table>

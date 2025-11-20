@@ -34,6 +34,7 @@ def novo_candidato(request):
     else:
         form = CandidatoForm()
     return render(request, 'candidatos/form.html', {"form":form, "titulo": "Novo Candidato"})
+
 def editar_candidado(request,pk):
     candidato = get_object_or_404(Candidato, pk=pk)
     if request.method == "POST":
