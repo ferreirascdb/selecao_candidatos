@@ -48,7 +48,7 @@
     <td>{{c.teste_sondagem}} </td>
     <td>{{c.prova_matematica}} </td>
     <td>{{c.observacao}} </td>
-    <td> </td>
+    <td> <a href="{% url 'editar_candidato' c.id %}"> <button type="button">Editar</button> </a>  </td>
     </tr>
     {% empty %}
         <tr><td colspan="12"> Nenhum Registro</td></tr>

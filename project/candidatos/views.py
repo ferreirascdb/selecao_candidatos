@@ -33,4 +33,15 @@ def novo_candidato(request):
         
     else:
         form = CandidatoForm()
-    return render(request, 'candidatos/form.html', {"form":form})
+    return render(request, 'candidatos/form.html', {"form":form, "titulo": "Novo Candidato"})
+def editar_candidado(request,pk):
+    candidato = get_object_or_404(Candidato, pk=pk)
+    if request.method == "POST":
+        form = CandidatoForm(request.POST, instance=candidato)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = CandidatoForm(instance=candidato)
+
+    return render(request, 'candidatos/form.html', {"form":form, "titulo": "Editar Candidato"})
