@@ -40,4 +40,15 @@ input, select, button, textarea {
     padding: 5px; 
     margin: 4px; 
 }
-
+.form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgb(143, 29, 29);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display:flex;
+}
+#formulario{
+    background-color: aqua;
+}

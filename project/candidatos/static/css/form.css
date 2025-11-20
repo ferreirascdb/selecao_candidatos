@@ -1,0 +1,24 @@
+:root {
+    --color1: #b9b8b7;
+    --color2: #cbcac9;
+    --color3: #dcdcdb;
+    --color4: #eeeded;
+    --color5: #ffffff;
+    --black: #000;
+
+}
+.form-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--color4);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000022;
+    font-family: Arial, sans-serif;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+

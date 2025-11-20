@@ -45,3 +45,9 @@ def editar_candidado(request,pk):
         form = CandidatoForm(instance=candidato)
 
     return render(request, 'candidatos/form.html', {"form":form, "titulo": "Editar Candidato"})
+
+def deletar_candidatos(request, id):
+    candidato = get_object_or_404(Candidato, id = id)
+    if request.method == "POST":
+        candidato.delete()
+        return redirect('index')

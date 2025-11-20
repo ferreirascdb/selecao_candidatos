@@ -48,7 +48,14 @@
     <td>{{c.teste_sondagem}} </td>
     <td>{{c.prova_matematica}} </td>
     <td>{{c.observacao}} </td>
-    <td> <a href="{% url 'editar_candidato' c.id %}"> <button type="button">Editar</button> </a>  </td>
+    <td> <a href="{% url 'editar_candidato' c.id %}"> <button type="button">Editar</button> </a>  
+        <form method="POST" action="{% url 'deletar_candidato' c.id %}" 
+            onsubmit="return confirm('Tem certeza que deseja excluir este candidato?');">
+            {% csrf_token %}
+            <button  type = "button">Excluir</button>
+        </form>
+    </td>
+    
     </tr>
     {% empty %}
         <tr><td colspan="12"> Nenhum Registro</td></tr>
