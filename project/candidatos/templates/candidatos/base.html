@@ -11,11 +11,11 @@
         {% if user.is_authenticated %}
         Olá, {{ user.username }} |
         <form action="{% url 'logout' %}" method="post" style="display:inline;">
-    {% csrf_token %}
-    <button type="submit" style="background:none;border:none;color:blue;cursor:pointer;">
-        Sair
-    </button>
-</form>
+            {% csrf_token %}
+            <button type="submit" style="background:none;border:none;color:blue;cursor:pointer;">
+            Sair
+            </button>
+        </form>
         {% if perms.candidatos.add_candidato %}
         | <a href="{% url 'novo_candidato' %}">Novo candidato</a>
         {% endif %}
