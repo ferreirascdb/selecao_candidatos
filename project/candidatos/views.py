@@ -4,6 +4,9 @@ from candidatos.models import Candidato
 from candidatos.forms import CandidatoForm
 
 
+def sem_permissao(request):
+    return render(request, 'candidatos/sem_permissao.html')
+
 @login_required
 def index(request):
     loja = request.GET.get('loja')
