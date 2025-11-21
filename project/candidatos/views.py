@@ -43,7 +43,11 @@ def novo_candidato(request):
         if form.is_valid():
             form.save()
             messages.success(request,'Candidato cadastrado com sucesso')
-            return redirect('index')
+            if request.user.has_perm('candidatos.view_candidato'):
+
+                return redirect('index')
+            else:
+                return redirect('novo_candidato')
         
     else:
         form = CandidatoForm()

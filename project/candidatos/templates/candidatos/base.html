@@ -8,9 +8,23 @@
 <body>
     <header>
         <h1>Controle de candidatos</h1>
-        <nav>
-            
-        </nav>
+        {% if user.is_authenticated %}
+        Olá, {{ user.username }} |
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" style="background:none;border:none;color:blue;cursor:pointer;">
+        Sair
+    </button>
+</form>
+        {% if perms.candidatos.add_candidato %}
+        | <a href="{% url 'novo_candidato' %}">Novo candidato</a>
+        {% endif %}
+        {% if perms.candidatos.view_candidato %}
+        | <a href="{% url 'index' %}">Lista</a>
+        {% endif %}
+        {% else %}
+        <a href="{% url 'login' %}">Entrar</a>
+        {% endif %}
     </header>
 
     <main class="container">
