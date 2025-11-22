@@ -17,7 +17,7 @@ def index(request):
 
     loja = request.GET.get('loja')
     busca = request.GET.get('busca')
-   
+    aprovados = request.GET.get('aprovados')
 
     candidatos = Candidato.objects.all()
 
@@ -26,6 +26,9 @@ def index(request):
 
     if busca:
         candidatos = candidatos.filter(nome__icontains=busca)
+
+    if aprovados:
+        candidatos = candidatos.filter(situacao__icontains=aprovados)
 
     lojas = Candidato.objects.values_list('loja', flat=True).distinct()
 

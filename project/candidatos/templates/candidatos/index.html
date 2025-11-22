@@ -13,6 +13,7 @@
         </select>
 
         <input type="text" name="busca" placeholder="Buscar por nome..." value="{{ request.GET.busca }}">
+        <input type="text" name="aprovados" placeholder="Buscar por situação..." value="{{ request.GET.aprovados }}">
         <button type="submit">Filtrar</button>
         <a  href= "{% url 'novo_candidato' %}"> <button type= "button"> Novo candidato </button></a>
     </div>
