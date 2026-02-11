@@ -9,7 +9,7 @@
     <h2 >{{ titulo }}</h2>
 
 
-    <form method="POST">
+    <form method="POST" class="mb-3">
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit">Salvar</button>
